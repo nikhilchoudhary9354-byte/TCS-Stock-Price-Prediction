@@ -1,6 +1,6 @@
 # TCS Stock Price Trend & Directional Prediction
 
-An end-to-end Python data analytics and machine learning pipeline that predicts next-day stock price movement (Bullish/Bearish) for TCS using historical equity data and technical indicators.
+An end-to-end Python data analytics and machine learning pipeline that predicts next-day stock price movement for TCS using historical equity data and technical indicators.
 
 ## 📌 Features & Highlights
 •⁠  ⁠*Data Ingestion*: Automated retrieval using ⁠ yfinance ⁠ API.
@@ -15,4 +15,4 @@ An end-to-end Python data analytics and machine learning pipeline that predicts 
 
 ## 📈 Key Results
 •⁠  ⁠Achieved a realistic baseline directional classification accuracy of *50%* on unseen chronological test data without data leakage.
--****
+-
