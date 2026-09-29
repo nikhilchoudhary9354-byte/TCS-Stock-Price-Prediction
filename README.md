@@ -1,18 +1,43 @@
-# TCS Stock Price Trend & Directional Prediction
+# TCS Stock Trend Analysis
 
-An end-to-end Python data analytics and machine learning pipeline that predicts next-day stock price movement for TCS using historical equity data and technical indicators.
+A Python project that analyzes TCS (Tata Consultancy Services) stock price data and builds a simple machine learning model to predict whether the stock price will go up or down the next day.
 
-## 📌 Features & Highlights
-•⁠  ⁠*Data Ingestion*: Automated retrieval using ⁠ yfinance ⁠ API.
-•⁠  ⁠*Feature Engineering*: Engineered 20-day MA, 50-day MA, 14-day RSI, and Daily Returns.
-•⁠  ⁠*Preprocessing*: Missing value handling and feature standardization via ⁠ StandardScaler ⁠.
-•⁠  ⁠*Validation*: Strict chronological split (⁠ shuffle=False ⁠, 80/20 ratio) to prevent data leakage in time-series forecasting.
-•⁠  ⁠*Modeling*: Tree-based classification using ⁠ RandomForestClassifier ⁠.
+## What it does
 
-## 🛠️ Tech Stack
-•⁠  ⁠*Language*: Python
-•⁠  ⁠*Libraries*: pandas, numpy, scikit-learn, yfinance
+- Downloads historical TCS stock price data (TCS.NS) using `yfinance`
+- Calculates daily price range, daily returns, and a 50-day Moving Average
+- Identifies "bullish days" (days when Close price is above the 50-day MA)
+- Plots Close Price vs 50-day Moving Average over time
+- Builds a Random Forest Classifier to predict next-day price direction (up/down), using Close price, 50-day MA, and Daily Return as features
+- Compares model accuracy against a baseline (always guessing the majority class), and prints a full classification report (precision, recall, f1-score)
 
-## 📈 Key Results
-•⁠  ⁠Achieved a realistic baseline directional classification accuracy of *50%* on unseen chronological test data without data leakage.
--
+## How to run
+
+1. Clone this repo
+2. Install the required libraries:
+   ```
+   pip install yfinance pandas matplotlib scikit-learn
+   ```
+3. Run the notebook (`TCS_Stock_Tred_analysis.ipynb`) in Jupyter or Google Colab
+
+## Sample Output
+
+```
+Model Accuracy: 65.12 %
+Baseline Accuracy (always guessing majority class): 53.49 %
+```
+
+## Notes
+
+- This is a classification model predicting price **direction** (up/down), not a time-series forecasting model predicting actual future prices.
+- Dataset covers about 1 year of trading data, so results should be read with some caution given the limited sample size.
+- Model accuracy is compared against a baseline to check whether it's actually better than just guessing the majority class.
+
+## Tech Used
+
+Python, Pandas, Matplotlib, yfinance, scikit-learn (Random Forest Classifier)
+
+## Author
+
+Nikhil Choudhary
+[LinkedIn](https://linkedin.com/in/nikhilchoudhary) | [GitHub](https://github.com/nikhilchoudhary9354-byte)
